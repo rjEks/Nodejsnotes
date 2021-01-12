@@ -1,5 +1,6 @@
 syntax = "proto3";
 package recipe;
+
 service RecipeService {
     rpc GetRecipe(RecipeRequest) returns (Recipe) {}
     rpc GetMetaData(Empty) returns (Meta) {}
