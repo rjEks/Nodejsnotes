@@ -3,7 +3,7 @@
 const server = require('fastify')();
 //Setando variaveis de ambiente
 const HOST = process.env.HOST || '127.0.0.1';
-const PORT = process.env.PORT || 4002;
+const PORT = process.env.PORT || 4003;
 
 console.log('worker pid = ' + `${process.pid}`);
 

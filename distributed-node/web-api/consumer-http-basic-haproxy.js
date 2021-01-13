@@ -9,6 +9,7 @@ const HOST = '127.0.0.1';
 const PORT = process.env.PORT || 3000;
 const TARGET = process.env.TARGET || 'localhost:4003';
 
+
         server.get('/', async () => {
             const req = await fetch(`http://${TARGET}/recipes/42`);
             const payload = await req.json();
@@ -17,6 +18,10 @@ const TARGET = process.env.TARGET || 'localhost:4003';
                     producer_data: payload
                    };
             });
+        server.get('/health', async () => {
+            console.log('health check');
+            return 'OK';
+        });
 
         server.listen(PORT, HOST, () => {
             console.log(`Consumer running at http://${HOST}:${PORT}/`);
